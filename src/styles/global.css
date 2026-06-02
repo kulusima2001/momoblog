@@ -388,9 +388,9 @@ p {
 @media (max-width: 720px) {
   :root {
     /* Mobile image sizes */
-    --project-image-wide-height: 220px;
-    --project-image-standard-height: 340px;
-    --project-image-portrait-width: 280px;
+    --project-image-wide-height: 160px;
+    --project-image-standard-height: 220px;
+    --project-image-portrait-width: 180px;
   }
 
   .site-shell {
