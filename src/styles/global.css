@@ -17,6 +17,7 @@
   --accent: #111111;
   --accent-dark: #000000;
   --accent-soft: #f2f2f2;
+  /* PC image sizes */
   --project-image-wide-height: 310px;
   --project-image-standard-height: 480px;
   --project-image-portrait-width: 380px;
@@ -385,6 +386,13 @@ p {
 }
 
 @media (max-width: 720px) {
+  :root {
+    /* Mobile image sizes */
+    --project-image-wide-height: 220px;
+    --project-image-standard-height: 340px;
+    --project-image-portrait-width: 280px;
+  }
+
   .site-shell {
     width: min(100% - 28px, 1040px);
   }
