@@ -10,21 +10,21 @@ export function Layout({ children }: LayoutProps) {
     <div className="site-shell">
       <header className="site-header">
         <NavLink to="/" className="site-brand">
-          [Name placeholder]
+          MomoBlog
         </NavLink>
         <nav className="site-nav" aria-label="[Navigation placeholder]">
-          <NavLink to="/">[Home placeholder]</NavLink>
-          <NavLink to="/about">[Info placeholder]</NavLink>
+          <NavLink to="/">[MomoBlog]</NavLink>
+          <NavLink to="/about">[About Momo]</NavLink>
           <a href="https://github.com/kulusima2001" target="_blank" rel="noreferrer">
-            [Link placeholder]
+            [Github Link]
           </a>
         </nav>
       </header>
       <main>{children}</main>
       <footer className="site-footer">
-        <span>[Footer placeholder]</span>
+        <span>Momo2026</span>
         <a href="https://github.com/kulusima2001" target="_blank" rel="noreferrer">
-          [Link placeholder]
+          https://github.com/kulusima2001
         </a>
       </footer>
     </div>
