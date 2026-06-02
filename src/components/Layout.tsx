@@ -13,10 +13,10 @@ export function Layout({ children }: LayoutProps) {
           MomoBlog
         </NavLink>
         <nav className="site-nav" aria-label="[Navigation placeholder]">
-          <NavLink to="/">[MomoBlog]</NavLink>
-          <NavLink to="/about">[About Momo]</NavLink>
+          <NavLink to="/gallery">Gallery</NavLink>
+          <NavLink to="/about">About Momo</NavLink>
           <a href="https://github.com/kulusima2001" target="_blank" rel="noreferrer">
-            [Github Link]
+            Github Link
           </a>
         </nav>
       </header>
