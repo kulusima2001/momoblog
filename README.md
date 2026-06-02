@@ -54,12 +54,20 @@ standard: fixed height, image scales proportionally
 portrait: fixed width, image scales proportionally
 ```
 
-Edit the size values in `src/styles/global.css`:
+Edit the PC size values in `src/styles/global.css`:
 
 ```css
---project-image-wide-height: 420px;
---project-image-standard-height: 520px;
---project-image-portrait-width: 420px;
+--project-image-wide-height: 310px;
+--project-image-standard-height: 480px;
+--project-image-portrait-width: 380px;
+```
+
+Edit the mobile size values inside `@media (max-width: 720px)`:
+
+```css
+--project-image-wide-height: 220px;
+--project-image-standard-height: 340px;
+--project-image-portrait-width: 280px;
 ```
 
 ## Text Options
