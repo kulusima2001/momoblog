@@ -17,6 +17,9 @@
   --accent: #111111;
   --accent-dark: #000000;
   --accent-soft: #f2f2f2;
+  --project-image-wide-height: 310px;
+  --project-image-standard-height: 480px;
+  --project-image-portrait-width: 380px;
 }
 
 * {
@@ -145,7 +148,6 @@ p {
 }
 
 .post-card {
-  min-height: 252px;
   background: var(--panel);
   border: 1px solid var(--line-soft);
   border-radius: 8px;
@@ -165,15 +167,40 @@ p {
 
 .post-card-link {
   height: 100%;
-  padding: 28px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
 }
 
-.post-card-meta,
-.article-date {
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   color: var(--muted);
+  background:
+    linear-gradient(135deg, transparent 24px, var(--line-soft) 25px, transparent 26px),
+    var(--panel-soft);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
   font-size: 14px;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.project-image-block img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 .post-card h2 {
@@ -224,7 +251,7 @@ p {
   font-size: clamp(36px, 6vw, 64px);
 }
 
-.article-header p:not(.article-date) {
+.article-header p {
   color: var(--muted);
   font-size: 18px;
   line-height: 1.8;
@@ -252,6 +279,44 @@ p {
 .article-content p {
   margin-bottom: 22px;
   color: #444444;
+}
+
+.project-image-block {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--muted);
+  background:
+    linear-gradient(135deg, transparent 30px, var(--line-soft) 31px, transparent 32px),
+    var(--panel-soft);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 34px;
+}
+
+.project-image-wide {
+  height: var(--project-image-wide-height);
+}
+
+.project-image-standard {
+  height: var(--project-image-standard-height);
+}
+
+.project-image-portrait {
+  width: min(100%, var(--project-image-portrait-width));
+  min-height: 520px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project-text-block {
+  margin-bottom: 28px;
+}
+
+.project-markdown-block {
+  margin-bottom: 34px;
 }
 
 .article-list-item {
