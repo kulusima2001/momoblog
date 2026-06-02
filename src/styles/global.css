@@ -111,7 +111,7 @@ p {
 .empty-state h1,
 .article-header h1 {
   margin-bottom: 22px;
-  font-size: clamp(40px, 7vw, 72px);
+  font-size: clamp(34px, 5vw, 54px);
   line-height: 1.02;
   letter-spacing: 0;
 }
@@ -249,7 +249,7 @@ p {
 }
 
 .article-header h1 {
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(32px, 4.5vw, 48px);
 }
 
 .article-header p {
@@ -389,8 +389,8 @@ p {
   :root {
     /* Mobile image sizes */
     --project-image-wide-height: 160px;
-    --project-image-standard-height: 220px;
-    --project-image-portrait-width: 180px;
+    --project-image-standard-height: 240px;
+    --project-image-portrait-width: 200px;
   }
 
   .site-shell {
@@ -417,7 +417,7 @@ p {
   .content-page h1,
   .empty-state h1,
   .article-header h1 {
-    font-size: 40px;
+    font-size: 34px;
   }
 
   .hero-description {

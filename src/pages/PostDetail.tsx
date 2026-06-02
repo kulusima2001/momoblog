@@ -81,7 +81,7 @@ export function PostDetail() {
   return (
     <article className="article-page">
       <header className="article-header">
-        <p className="eyebrow">[Title]</p>
+        <p className="eyebrow">Title</p>
         <h1>{post.title}</h1>
         <p>{post.description}</p>
         <TagList tags={post.tags} />
