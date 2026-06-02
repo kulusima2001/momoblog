@@ -243,6 +243,29 @@ p {
   padding: 72px 0;
 }
 
+.about-avatar {
+  width: 160px;
+  height: 160px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: 28px;
+  color: var(--muted);
+  background:
+    linear-gradient(135deg, transparent 20px, var(--line-soft) 21px, transparent 22px),
+    var(--panel-soft);
+  border: 1px dashed var(--line);
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .article-header {
   padding-bottom: 42px;
   border-bottom: 1px solid var(--line);
@@ -443,6 +466,11 @@ p {
   .content-page,
   .empty-state {
     padding: 52px 0;
+  }
+
+  .about-avatar {
+    width: 120px;
+    height: 120px;
   }
 
   .article-content {
