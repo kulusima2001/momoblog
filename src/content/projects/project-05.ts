@@ -3,32 +3,21 @@ import type { PortfolioItem } from "../../types/project";
 export const project05: PortfolioItem = {
   id: "project-05",
   slug: "project-05",
-  title: "[Title placeholder]",
-  description: "[Short description placeholder]",
-  thumbnailImage: "",
-  tags: ["[Tag]", "[Tag]", "[Tag]"],
+  title: "废墟之上",
+  wordCount: "0 word",
+  description: "在核爆50年后的废土世界冒险吧！",
+  thumbnailImage: "/momoblog/images/project-05/project-05-01.jpg",
+  tags: ["来自新世界",],
   blocks: [
     {
       type: "image",
-      src: "",
+      src: "/momoblog/images/project-05/project-05-01.jpg",
       label: "[Image placeholder]",
-      aspectRatio: "wide"
+      aspectRatio: "portrait"
     },
     {
       type: "text",
       text: "[Text placeholder]"
     },
-    {
-      type: "image",
-      src: "",
-      label: "[Image placeholder]",
-      aspectRatio: "wide"
-    },
-    {
-      type: "image",
-      src: "",
-      label: "[Image placeholder]",
-      aspectRatio: "standard"
-    }
   ]
 };

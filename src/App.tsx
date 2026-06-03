@@ -11,7 +11,7 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/story" element={<Gallery />} />
         <Route path="/projects/:slug" element={<PostDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />

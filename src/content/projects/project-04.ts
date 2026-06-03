@@ -4,6 +4,7 @@ export const project04: PortfolioItem = {
   id: "project-04",
   slug: "project-04",
   title: "[Title placeholder]",
+  wordCount: "[Word count placeholder]",
   description: "[Short description placeholder]",
   thumbnailImage: "",
   tags: ["[Tag]", "[Tag]", "[Tag]"],

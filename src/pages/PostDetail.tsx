@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { TagList } from "../components/TagList";
 import { projects } from "../content/projects";
 import type { ProjectContentBlock } from "../types/project";
@@ -37,11 +37,13 @@ function renderMarkdown(content: string, blockIndex: number) {
 
 function renderProjectBlock(block: ProjectContentBlock, index: number) {
   if (block.type === "image") {
-    const aspectClass = block.aspectRatio ? `project-image-${block.aspectRatio}` : "project-image-wide";
+    return renderProjectImage(block, index);
+  }
 
+  if (block.type === "imageGroup") {
     return (
-      <div key={index} className={`project-image-block ${aspectClass}`}>
-        {block.src ? <img src={block.src} alt="" /> : <span>{block.label}</span>}
+      <div key={index} className="project-image-row">
+        {block.images.map((image, imageIndex) => renderProjectImage(image, imageIndex))}
       </div>
     );
   }
@@ -61,8 +63,21 @@ function renderProjectBlock(block: ProjectContentBlock, index: number) {
   );
 }
 
+function renderProjectImage(block: Extract<ProjectContentBlock, { type: "image" }>, key: number) {
+  const aspectClass = block.aspectRatio ? `project-image-${block.aspectRatio}` : "project-image-wide";
+
+  return (
+    <div key={key} className={`project-image-block ${aspectClass}`}>
+      {block.src ? <img src={block.src} alt="" /> : <span>{block.label}</span>}
+    </div>
+  );
+}
+
 export function PostDetail() {
   const { slug } = useParams();
+  const location = useLocation();
+  const locationState = location.state as { returnTo?: string } | null;
+  const returnTo = locationState?.returnTo === "/story" ? "/story" : "/";
   const post = projects.find((item) => item.slug === slug);
 
   if (!post) {
@@ -71,7 +86,7 @@ export function PostDetail() {
         <p className="eyebrow">404</p>
         <h1>[Missing page placeholder]</h1>
         <p>[Message placeholder]</p>
-        <Link to="/" className="text-button">
+        <Link to={returnTo} className="text-button">
           [返回首页]
         </Link>
       </section>
@@ -92,8 +107,8 @@ export function PostDetail() {
       </div>
 
       <footer className="article-footer">
-        <Link to="/" className="text-button">
-          [返回首页]
+        <Link to={returnTo} className="text-button">
+          返回
         </Link>
       </footer>
     </article>
