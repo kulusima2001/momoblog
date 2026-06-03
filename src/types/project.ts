@@ -15,12 +15,22 @@ export type ProjectImageBlock = {
   aspectRatio?: "wide" | "standard" | "portrait";
 };
 
-export type ProjectContentBlock = ProjectTextBlock | ProjectMarkdownBlock | ProjectImageBlock;
+export type ProjectImageGroupBlock = {
+  type: "imageGroup";
+  images: ProjectImageBlock[];
+};
+
+export type ProjectContentBlock =
+  | ProjectTextBlock
+  | ProjectMarkdownBlock
+  | ProjectImageBlock
+  | ProjectImageGroupBlock;
 
 export type PortfolioItem = {
   id: string;
   slug: string;
   title: string;
+  wordCount: string;
   description: string;
   thumbnailImage: string;
   tags: string[];

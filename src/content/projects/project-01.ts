@@ -5,13 +5,14 @@ export const project01: PortfolioItem = {
   id: "project-01",
   slug: "project-01",
   title: "長夏高懸",
+  wordCount: "25K words",
   description: "一個髮生在無儘夏日的故事。",
-  thumbnailImage: "/momoblog/images/project-01-02.jpg",
-  tags: ["台女if线", "全文共计2.5w字"],
+  thumbnailImage: "/momoblog/images/project-01/project-01-02.jpg",
+  tags: ["金鱼悬浮", ],
   blocks: [
     {
       type: "image",
-      src: "/momoblog/images/project-01-01.jpg",
+      src: "/momoblog/images/project-01/project-01-01.jpg",
       label: "[Image placeholder]",
       aspectRatio: "wide"
     },
@@ -21,7 +22,7 @@ export const project01: PortfolioItem = {
     },
     {
       type: "image",
-      src: "/momoblog/images/project-01-02.jpg",
+      src: "/momoblog/images/project-01/project-01-02.jpg",
       label: "[Image placeholder]",
       aspectRatio: "standard"
     },

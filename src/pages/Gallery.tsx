@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import { PostCard } from "../components/PostCard";
+import { TimeLine } from "../components/TimeLine";
 import { project01 } from "../content/projects/project-01";
 import { project02 } from "../content/projects/project-02";
 import { project03 } from "../content/projects/project-03";
 import { project04 } from "../content/projects/project-04";
 import { project05 } from "../content/projects/project-05";
+import { timeline01 } from "../content/timelines";
 
 const gallerySections = [
   {
     id: "section-01",
     description: "原作线 | 双花滑选手",
     title: "吹不动那红色的河",
+    timeline: timeline01,
     items: [project03]
   },
   {
@@ -42,7 +45,7 @@ export function Gallery() {
   return (
     <section className="gallery-page">
       <div className="gallery-header">
-        <p className="eyebrow">Gallery</p>
+        <p className="eyebrow">Story</p>
         <h1>故事</h1>
         <p>目前共有5条故事线。</p>
       </div>
@@ -52,26 +55,20 @@ export function Gallery() {
           <section key={section.id} className="gallery-section">
             <div className="gallery-section-heading">
               <h2>{section.title}</h2>
-              <p>{section.description}</p>
+                {/*<p>{section.description}</p>*/}
+
             </div>
+
+            {section.timeline ? <TimeLine timeline={section.timeline} /> : null}
 
             <div className="story-grid">
               {section.items.map((project) => (
-                <article key={project.id} className="story-card">
-                  <Link to={`/projects/${project.slug}`} className="story-card-link">
-                    <div className="story-card-image">
-                      {project.thumbnailImage ? (
-                        <img src={project.thumbnailImage} alt="" />
-                      ) : (
-                        <span>[Image placeholder]</span>
-                      )}
-                    </div>
-                    <div className="story-card-copy">
-                      <h2>{project.title}</h2>
-                      <p>{project.description}</p>
-                    </div>
-                  </Link>
-                </article>
+                <PostCard
+                  key={project.id}
+                  post={project}
+                  imageClassName="story-card-image"
+                  titleLevel={3}
+                />
               ))}
             </div>
           </section>

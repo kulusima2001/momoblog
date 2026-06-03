@@ -3,26 +3,32 @@ import type { PortfolioItem } from "../../types/project";
 export const project02: PortfolioItem = {
   id: "project-02",
   slug: "project-02",
-  title: "[Title placeholder]",
-  description: "[Short description placeholder]",
-  thumbnailImage: "",
-  tags: ["[Tag]", "[Tag]", "[Tag]"],
+  title: "罗森所见证的",
+  wordCount: "0 word",
+  description: "发生在小黎15岁JGPF前夕的故事。",
+  thumbnailImage: "/momoblog/images/project-02/project-02-01.jpg",
+  tags: ["气膜冰场的雨季", ],
   blocks: [
     {
       type: "text",
       text: "[Text placeholder]"
     },
     {
-      type: "image",
-      src: "",
-      label: "[Image placeholder]",
-      aspectRatio: "wide"
-    },
-    {
-      type: "image",
-      src: "",
-      label: "[Image placeholder]",
-      aspectRatio: "portrait"
+      type: "imageGroup",
+      images: [
+        {
+          type: "image",
+          src: "/momoblog/images/project-02/project-02-01.jpg",
+          label: "[Image placeholder]",
+          aspectRatio: "standard"
+        },
+        {
+          type: "image",
+          src: "/momoblog/images/project-02/project-02-01.jpg",
+          label: "[Image placeholder]",
+          aspectRatio: "standard"
+        }
+      ]
     },
     {
       type: "text",
