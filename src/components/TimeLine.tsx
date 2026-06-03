@@ -1,5 +1,5 @@
 export type TimelineEntry = {
-  id: string;
+  id?: string;
   date: string;
   title: string;
   description?: string;
@@ -26,8 +26,8 @@ export function TimeLine({ timeline }: TimeLineProps) {
       )}
 
       <ol className="timeline-list">
-        {timeline.entries.map((entry) => (
-          <li key={entry.id} className="timeline-item">
+        {timeline.entries.map((entry, index) => (
+          <li key={`timeline-entry-${index}`} className="timeline-item">
             <div className="timeline-marker" aria-hidden="true" />
             <div className="timeline-copy">
               <time>{entry.date}</time>
