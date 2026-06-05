@@ -8,6 +8,7 @@ export const template: PortfolioItem = {
   wordCount: "[Word count placeholder]",
   description: "[Short description placeholder]",
   thumbnailImage: "",
+  hasAdultContent: false,
   tags: ["[Tag]", "[Tag]", "[Tag]"],
   blocks: [
     {

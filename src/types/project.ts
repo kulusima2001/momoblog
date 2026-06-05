@@ -33,6 +33,7 @@ export type PortfolioItem = {
   wordCount: string;
   description: string;
   thumbnailImage: string;
+  hasAdultContent: boolean;
   tags: string[];
   blocks: ProjectContentBlock[];
 };

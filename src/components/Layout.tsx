@@ -23,8 +23,8 @@ export function Layout({ children }: LayoutProps) {
       <main>{children}</main>
       <footer className="site-footer">
         <span>Momo2026</span>
-        <a href="https://github.com/kulusima2001" target="_blank" rel="noreferrer">
-          https://github.com/kulusima2001
+        <a href="https://kulusima2001.github.io/momoblog" target="_blank" rel="noreferrer">
+          https://kulusima2001.github.io/momoblog
         </a>
       </footer>
     </div>
