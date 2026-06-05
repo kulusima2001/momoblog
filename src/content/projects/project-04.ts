@@ -7,7 +7,8 @@ export const project04: PortfolioItem = {
   wordCount: "[Word count placeholder]",
   description: "[Short description placeholder]",
   thumbnailImage: "",
-  tags: ["[Tag]", "[Tag]", "[Tag]"],
+  hasAdultContent: false,
+  tags: ["[Tag]", ],
   blocks: [
     {
       type: "image",

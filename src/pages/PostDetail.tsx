@@ -1,4 +1,5 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { TagList } from "../components/TagList";
 import { projects } from "../content/projects";
 import type { ProjectContentBlock } from "../types/project";
@@ -76,9 +77,15 @@ function renderProjectImage(block: Extract<ProjectContentBlock, { type: "image" 
 export function PostDetail() {
   const { slug } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const locationState = location.state as { returnTo?: string } | null;
   const returnTo = locationState?.returnTo === "/story" ? "/story" : "/";
   const post = projects.find((item) => item.slug === slug);
+  const [isAdultContentConfirmed, setIsAdultContentConfirmed] = useState(false);
+
+  useEffect(() => {
+    setIsAdultContentConfirmed(false);
+  }, [slug]);
 
   if (!post) {
     return (
@@ -90,6 +97,34 @@ export function PostDetail() {
           [返回首页]
         </Link>
       </section>
+    );
+  }
+
+  if (post.hasAdultContent && !isAdultContentConfirmed) {
+    return (
+      <div className="adult-content-gate" role="dialog" aria-modal="true" aria-labelledby="adult-content-title">
+        <div className="adult-content-dialog">
+          <p className="eyebrow">Content notice</p>
+          <h1 id="adult-content-title">成人内容提示</h1>
+          <p>这篇文章包含成人内容。请确认你已满 18 岁，并愿意继续阅读。</p>
+          <div className="adult-content-actions">
+            <button
+              type="button"
+              className="text-button"
+              onClick={() => setIsAdultContentConfirmed(true)}
+            >
+              确认进入
+            </button>
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => navigate(returnTo, { replace: true })}
+            >
+              取消
+            </button>
+          </div>
+        </div>
+      </div>
     );
   }
 

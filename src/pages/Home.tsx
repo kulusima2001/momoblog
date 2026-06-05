@@ -30,11 +30,17 @@ const characterProfiles = [
 ] as const;
 
 const featuredProjects = projects.slice(0, 2);
+const heroVisualImage = "/momoblog/images/visualimage1.jpg";
 
 export function Home() {
   return (
     <section className="home-page">
       <div className="hero">
+        <div
+          className="hero-visual"
+          style={{ backgroundImage: `url(${heroVisualImage})` }}
+          aria-hidden="true"
+        />
         <p className="eyebrow">All about Camellia and Lily</p>
         <h1>有关于黎涵和李理的一切</h1>
         <p className="hero-description">一句话速通本站：有关于两位花样滑冰选手的一切。</p>

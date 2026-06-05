@@ -41,10 +41,17 @@ const gallerySections = [
   }
 ];
 
+const galleryHeaderVisualImage = "/momoblog/images/visualimage1.jpg";
+
 export function Gallery() {
   return (
     <section className="gallery-page">
       <div className="gallery-header">
+        <div
+          className="gallery-header-visual"
+          style={{ backgroundImage: `url(${galleryHeaderVisualImage})` }}
+          aria-hidden="true"
+        />
         <p className="eyebrow">Story</p>
         <h1>故事</h1>
         <p>目前共有5条故事线。</p>
