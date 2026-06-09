@@ -5,6 +5,7 @@ import { project02 } from "../content/projects/project-02";
 import { project03 } from "../content/projects/project-03";
 import { project04 } from "../content/projects/project-04";
 import { project05 } from "../content/projects/project-05";
+import { project06 } from "../content/projects/project-06";
 import { timeline01 } from "../content/timelines";
 
 const gallerySections = [
@@ -19,7 +20,7 @@ const gallerySections = [
     id: "section-02",
     description: "师生if线 | 年差12岁 | 花滑选手 x 花滑教练",
     title: "气膜冰场的雨季",
-    items: [project02]
+    items: [project02, project06]
   },
   {
     id: "section-03",
@@ -38,7 +39,7 @@ const gallerySections = [
     description: "向哨pa",
     title: "来自新世界",
     items: [project05]
-  }
+  },
 ];
 
 const galleryHeaderVisualImage = "/momoblog/images/visualimage1.jpg";

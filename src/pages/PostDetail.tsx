@@ -106,7 +106,7 @@ export function PostDetail() {
         <div className="adult-content-dialog">
           <p className="eyebrow">Content notice</p>
           <h1 id="adult-content-title">成人内容提示</h1>
-          <p>这篇文章包含成人内容。请确认你已满 18 岁，并愿意继续阅读。</p>
+          <p>这篇文章包含成人内容且不适合任何需要预警的人观看。请确认您已满 18 岁，并愿意继续阅读。</p>
           <div className="adult-content-actions">
             <button
               type="button"
