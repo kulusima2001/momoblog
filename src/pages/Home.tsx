@@ -1,5 +1,11 @@
 import { PostCard } from "../components/PostCard";
 import { projects } from "../content/projects";
+import {project01} from "../content/projects/project-01";
+import {project02} from "../content/projects/project-02";
+import {project03} from "../content/projects/project-03";
+import {project04} from "../content/projects/project-04";
+import {project05} from "../content/projects/project-05";
+import {project06} from "../content/projects/project-06";
 
 const characterProfiles = [
   {
@@ -29,7 +35,7 @@ const characterProfiles = [
   }
 ] as const;
 
-const featuredProjects = projects.slice(0, 2);
+const featuredProjects = [project01, project06];
 const heroVisualImage = "/momoblog/images/visualimage1.jpg";
 
 export function Home() {
@@ -67,7 +73,7 @@ export function Home() {
       </section>
 
       <div className="section-heading">
-        <h2>Gallery</h2>
+        <h2>Recommendation</h2>
         <span>{featuredProjects.length} 篇</span>
       </div>
 
