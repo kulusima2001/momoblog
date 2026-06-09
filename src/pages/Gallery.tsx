@@ -63,7 +63,7 @@ export function Gallery() {
           <section key={section.id} className="gallery-section">
             <div className="gallery-section-heading">
               <h2>{section.title}</h2>
-                {/*<p>{section.description}</p>*/}
+                <p>{section.description}</p>
 
             </div>
 
