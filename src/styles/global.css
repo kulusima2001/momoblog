@@ -520,7 +520,7 @@ p {
 }
 
 .timeline-scroll-area {
-  --timeline-badge-size: 32px;
+  --timeline-badge-size: 110px;
   --timeline-thumb-center: 50%;
   position: relative;
 }
@@ -562,8 +562,8 @@ p {
   left: 0;
   bottom: 0;
   display: block;
-  width: 150px;
-  height: 150px;
+  width: var(--timeline-badge-size);
+  height: var(--timeline-badge-size);
   object-fit: contain;
   user-select: none;
   transform: translate(-50%, 50%);
@@ -1129,7 +1129,7 @@ p {
   }
 
   .timeline-scrollbar-thumb-anchor {
-    --timeline-badge-size: 80px;
+    --timeline-badge-size: 75px;
     bottom: 0;
   }
 
