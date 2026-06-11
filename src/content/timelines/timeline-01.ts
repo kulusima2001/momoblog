@@ -3,6 +3,7 @@ import type { TimelineData } from "../../components/TimeLine";
 export const timeline01: TimelineData = {
   title: "原作线",
   description: "1999/11/07 ~ Present",
+  thumbImage: "/momoblog/images/project-01/timeline-01.png",
   entries: [
     {
       id: "timeline-01-01",
