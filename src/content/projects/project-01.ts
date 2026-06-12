@@ -9,7 +9,7 @@ export const project01: PortfolioItem = {
   description: "一個髮生在無儘夏日的故事。",
   thumbnailImage: "/momoblog/images/project-01/project-01-02.jpg",
   hasAdultContent: true,
-  tags: ["金鱼悬浮", ],
+  tags: ["金鱼悬浮", "18+"],
   blocks: [
     {
       type: "image",

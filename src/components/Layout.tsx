@@ -14,6 +14,7 @@ export function Layout({ children }: LayoutProps) {
         </NavLink>
         <nav className="site-nav" aria-label="[Navigation placeholder]">
           <NavLink to="/story">Story</NavLink>
+          <NavLink to="/scores">Score</NavLink>
           <NavLink to="/about">About Momo</NavLink>
           <a href="https://github.com/kulusima2001" target="_blank" rel="noreferrer">
             Github Link
