@@ -49,6 +49,11 @@
   font-weight: 700;
 }
 
+.score-protocol-table strong,
+.score-protocol-table b {
+  font-size: inherit;
+}
+
 .score-left {
   text-align: left;
 }
@@ -297,5 +302,16 @@
   .score-event-title span {
     display: block;
     margin: 4px 0 0;
+  }
+
+  .score-protocol-table th,
+  .score-protocol-table td,
+  .score-back-button {
+    font-size: 12px;
+  }
+
+  .score-protocol-table strong,
+  .score-protocol-table b {
+    font-size: inherit;
   }
 }
