@@ -26,14 +26,20 @@
 }
 
 .score-sheet {
+  display: grid;
+  gap: 0.25em;
   overflow-x: auto;
   background: #ffffff;
+}
+
+.score-section-box {
+  width: 100%;
+  min-width: 960px;
   border: 1px solid #000000;
 }
 
 .score-protocol-table {
   width: 100%;
-  min-width: 960px;
   border-collapse: collapse;
   table-layout: fixed;
   background: #ffffff;
@@ -113,7 +119,6 @@
   padding-bottom: 5px;
   font-size: var(--score-bold-font-size);
   font-weight: 700;
-  border-bottom: 1px solid #000000;
 }
 
 .score-col-number {
@@ -186,12 +191,10 @@
 .score-components-table .score-total-row td {
   padding-top: 2px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #000000;
 }
 
 .score-deductions-table {
-  min-width: 960px;
-  border-top: 1px solid #000000;
+  min-width: 0;
 }
 
 .score-deductions-table td {
@@ -199,7 +202,6 @@
   padding-bottom: 4px;
   font-size: var(--score-bold-font-size);
   font-weight: 700;
-  border-top: 1px solid #000000;
 }
 
 .score-deductions-table td:nth-child(1) {
