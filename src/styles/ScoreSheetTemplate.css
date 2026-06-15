@@ -1,4 +1,7 @@
 .score-page {
+  --score-table-font-size: 13px;
+  --score-bold-font-size: var(--score-table-font-size);
+
   width: min(1120px, 100%);
   margin: 0 auto;
   padding: 36px 0 72px;
@@ -41,17 +44,18 @@
   text-align: right;
   vertical-align: middle;
   border: 0;
-  font-size: 13px;
+  font-size: var(--score-table-font-size);
   line-height: 1.04;
 }
 
 .score-protocol-table th {
+  font-size: var(--score-bold-font-size);
   font-weight: 700;
 }
 
 .score-protocol-table strong,
 .score-protocol-table b {
-  font-size: inherit;
+  font-size: var(--score-bold-font-size);
 }
 
 .score-left {
@@ -105,6 +109,7 @@
 .score-skater-row td {
   padding-top: 4px;
   padding-bottom: 5px;
+  font-size: var(--score-bold-font-size);
   font-weight: 700;
   border-bottom: 1px solid #000000;
 }
@@ -162,6 +167,7 @@
 .score-total-row td {
   padding-top: 3px;
   padding-bottom: 6px;
+  font-size: var(--score-bold-font-size);
   font-weight: 700;
 }
 
@@ -183,6 +189,7 @@
 .score-deductions-table td {
   padding-top: 4px;
   padding-bottom: 4px;
+  font-size: var(--score-bold-font-size);
   font-weight: 700;
   border-top: 1px solid #000000;
 }
@@ -291,6 +298,8 @@
 
 @media (max-width: 900px) {
   .score-page {
+    --score-table-font-size: 12px;
+
     padding: 24px 0 52px;
     font-size: 12px;
   }
@@ -307,11 +316,11 @@
   .score-protocol-table th,
   .score-protocol-table td,
   .score-back-button {
-    font-size: 12px;
+    font-size: var(--score-table-font-size);
   }
 
   .score-protocol-table strong,
   .score-protocol-table b {
-    font-size: inherit;
+    font-size: var(--score-bold-font-size);
   }
 }
