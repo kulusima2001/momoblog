@@ -8,6 +8,8 @@
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 .score-event-title {
@@ -171,6 +173,12 @@
   font-weight: 700;
 }
 
+.score-protocol-table .score-summary-value {
+  font-size: var(--score-bold-font-size);
+  font-weight: 700;
+  line-height: 1.04;
+}
+
 .score-components-table {
   margin-top: 10px;
 }
@@ -321,6 +329,10 @@
 
   .score-protocol-table strong,
   .score-protocol-table b {
+    font-size: var(--score-bold-font-size);
+  }
+
+  .score-protocol-table .score-summary-value {
     font-size: var(--score-bold-font-size);
   }
 }

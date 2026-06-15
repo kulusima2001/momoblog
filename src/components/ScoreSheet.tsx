@@ -196,7 +196,7 @@ export function ScoreSheet({ scoreSheet }: ScoreSheetProps) {
               <td className="score-left" colSpan={judges.length + 5}>
                 Judges Total Program Component Score (factored)
               </td>
-              <td>{componentTotal}</td>
+              <td className="score-summary-value">{componentTotal}</td>
             </tr>
           </tbody>
         </table>
@@ -226,7 +226,7 @@ export function ScoreSheet({ scoreSheet }: ScoreSheetProps) {
                   </span>
                 ))}
               </td>
-              <td>{deductions}</td>
+              <td className="score-summary-value">{deductions}</td>
             </tr>
           </tbody>
         </table>
