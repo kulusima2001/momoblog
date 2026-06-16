@@ -28,8 +28,8 @@ export const LiLI2018OgShortProgram: ScoreSheetData = {
     { label: "J9" },
   ],
   technicalElements: [
-    { number: "1", executedElement: "3Lo", info: "", baseValue: "4.90", goe: "1.47", judges: ["2", "1", "3", "3", "2", "2", "4", "5", "5"], ref: "", panelScore: "6.37" },
-    { number: "2", executedElement: "3A", info: "", baseValue: "8.00", goe: "1.60", judges: ["3", "1", "1", "3", "3", "4", "2", "0", "1"], ref: "", panelScore: "9.60" },
+    { number: "1", executedElement: "3A", info: "", baseValue: "8.00", goe: "1.60", judges: ["3", "1", "1", "3", "3", "4", "2", "0", "1"], ref: "", panelScore: "9.60" },
+    { number: "2", executedElement: "3Lo", info: "", baseValue: "4.90", goe: "1.47", judges: ["2", "1", "3", "3", "2", "2", "4", "5", "5"], ref: "", panelScore: "6.37" },
     { number: "3", executedElement: "FCCoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["5", "2", "5", "4", "3", "3", "4", "5", "4"], ref: "", panelScore: "4.90" },
     { number: "4", executedElement: "3F+3T", info: "x", baseValue: "10.45", goe: "1.17", judges: ["3", "2", "2", "0", "4", "0", "3", "2", "2"], ref: "", panelScore: "11.62" },
     { number: "5", executedElement: "StSq4", info: "", baseValue: "3.90", goe: "1.17", judges: ["1", "5", "4", "1", "3", "3", "1", "4", "5"], ref: "", panelScore: "5.07" },
