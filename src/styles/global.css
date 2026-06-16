@@ -454,15 +454,35 @@ p {
   line-height: 1.25;
 }
 
-.gallery-section-heading p {
+.gallery-section-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
   margin: 12px 0 0;
-  padding: 12px 14px;
+}
+
+.gallery-section-meta p {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
   color: var(--muted);
-  background: var(--panel-soft);
-  border: 1px solid var(--line-soft);
-  border-radius: 6px;
   font-size: 14px;
   line-height: 1.7;
+}
+
+.gallery-section-link {
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 160ms ease;
+}
+
+.gallery-section-link:hover {
+  color: #333333;
 }
 
 .timeline {
@@ -1069,6 +1089,12 @@ p {
 
   .gallery-header h1 {
     font-size: 25px;
+  }
+
+  .gallery-section-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .story-grid {

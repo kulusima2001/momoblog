@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { PostCard } from "../components/PostCard";
 import { TimeLine } from "../components/TimeLine";
+import type { PortfolioItem } from "../types/project";
 import { project01 } from "../content/projects/project-01";
 import { project02 } from "../content/projects/project-02";
 import { project03 } from "../content/projects/project-03";
@@ -8,11 +10,23 @@ import { project05 } from "../content/projects/project-05";
 import { project06 } from "../content/projects/project-06";
 import { timeline01 } from "../content/timelines";
 
-const gallerySections = [
+type GallerySection = {
+  id: string;
+  description: string;
+  title: string;
+  link?: string;
+  linkText?: string;
+  timeline?: typeof timeline01;
+  items: PortfolioItem[];
+};
+
+const gallerySections: GallerySection[] = [
   {
     id: "section-01",
     description: "原作线 | 双花滑选手",
     title: "吹不动那红色的河",
+    link: "/scores",
+    linkText: "记录查询",
     timeline: timeline01,
     items: [project03]
   },
@@ -63,8 +77,14 @@ export function Gallery() {
           <section key={section.id} className="gallery-section">
             <div className="gallery-section-heading">
               <h2>{section.title}</h2>
+              <div className="gallery-section-meta">
                 <p>{section.description}</p>
-
+                {section.link ? (
+                  <Link className="gallery-section-link" to={section.link}>
+                    {section.linkText ?? section.link}
+                  </Link>
+                ) : null}
+              </div>
             </div>
 
             {section.timeline ? <TimeLine timeline={section.timeline} /> : null}
