@@ -1,0 +1,50 @@
+import type { ScoreSheetData } from "./types";
+
+export const LiLI2018OgShortProgram: ScoreSheetData = {
+  id: "li-li-2018-og-short-program",
+  title: "2018 Olympic Winter Games - Li LI Short Program",
+  eventName: "Olympic Winter Games",
+  eventYear: "2018",
+  programType: "Short Program",
+  skater: {
+    name: "Li LI",
+    country: "CHN",
+    rank: "1",
+    startNumber: "25",
+  },
+  totalScore: "80.20",
+  tes: "46.62",
+  pcs: "33.58",
+  deductions: "0.00",
+  judges: [
+    { label: "J1" },
+    { label: "J2" },
+    { label: "J3" },
+    { label: "J4" },
+    { label: "J5" },
+    { label: "J6" },
+    { label: "J7" },
+    { label: "J8" },
+    { label: "J9" },
+  ],
+  technicalElements: [
+    { number: "1", executedElement: "3Lo", info: "", baseValue: "4.90", goe: "1.47", judges: ["2", "1", "3", "3", "2", "2", "4", "5", "5"], ref: "", panelScore: "6.37" },
+    { number: "2", executedElement: "3A", info: "", baseValue: "8.00", goe: "1.60", judges: ["3", "1", "1", "3", "3", "4", "2", "0", "1"], ref: "", panelScore: "9.60" },
+    { number: "3", executedElement: "FCCoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["5", "2", "5", "4", "3", "3", "4", "5", "4"], ref: "", panelScore: "4.90" },
+    { number: "4", executedElement: "3F+3T", info: "x", baseValue: "10.45", goe: "1.17", judges: ["3", "2", "2", "0", "4", "0", "3", "2", "2"], ref: "", panelScore: "11.62" },
+    { number: "5", executedElement: "StSq4", info: "", baseValue: "3.90", goe: "1.17", judges: ["1", "5", "4", "1", "3", "3", "1", "4", "5"], ref: "", panelScore: "5.07" },
+    { number: "6", executedElement: "FCSp4", info: "", baseValue: "3.20", goe: "0.96", judges: ["2", "5", "4", "1", "2", "4", "2", "2", "5"], ref: "", panelScore: "4.16" },
+    { number: "7", executedElement: "CCoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["4", "4", "2", "5", "3", "4", "5", "4", "4"], ref: "", panelScore: "4.90" },
+  ],
+  technicalTotals: {
+    baseValue: "37.45",
+    panelScore: "46.62",
+  },
+  programComponents: [
+    { component: "Composition", factor: "1.33", judges: ["8.50", "9.00", "7.50", "8.00", "8.50", "8.75", "8.25", "8.00", "7.75"], score: "8.25" },
+    { component: "Presentation", factor: "1.33", judges: ["8.25", "8.25", "8.25", "7.50", "7.75", "8.75", "8.25", "9.00", "8.25"], score: "8.25" },
+    { component: "Skating Skills", factor: "1.33", judges: ["9.25", "8.75", "8.25", "9.25", "8.00", "9.50", "9.00", "8.00", "8.75"], score: "8.75" },
+  ],
+  componentTotal: "33.58",
+  deductionItems: [],
+};

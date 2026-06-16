@@ -1,20 +1,20 @@
 import type { ScoreSheetData } from "./types";
 
-export const hanLi2018OgShortProgram: ScoreSheetData = {
+export const HanLI2018OgShortProgram: ScoreSheetData = {
   id: "han-li-2018-og-short-program",
-  title: "2018 Olympic Winter Games - Han Li Short Program",
+  title: "2018 Olympic Winter Games - Han LI Short Program",
   eventName: "Olympic Winter Games",
   eventYear: "2018",
   programType: "Short Program",
   skater: {
-    name: "Han Li",
+    name: "Han LI",
     country: "CHN",
     rank: "3",
     startNumber: "27",
   },
-  totalScore: "78.79",
-  tes: "42.39",
-  pcs: "36.40",
+  totalScore: "77.82",
+  tes: "43.57",
+  pcs: "34.25",
   deductions: "0.00",
   judges: [
     { label: "J1" },
@@ -28,23 +28,23 @@ export const hanLi2018OgShortProgram: ScoreSheetData = {
     { label: "J9" },
   ],
   technicalElements: [
-    { number: "1", executedElement: "3F", info: "", baseValue: "5.30", goe: "1.06", judges: ["2", "2", "2", "2", "2", "1", "3", "2", "1"], ref: "", panelScore: "6.36" },
-    { number: "2", executedElement: "2A", info: "", baseValue: "3.30", goe: "0.99", judges: ["3", "3", "3", "3", "2", "3", "4", "3", "3"], ref: "", panelScore: "4.29" },
-    { number: "3", executedElement: "FCSp4", info: "", baseValue: "3.20", goe: "0.96", judges: ["3", "3", "3", "3", "3", "3", "2", "4", "3"], ref: "", panelScore: "4.16" },
-    { number: "4", executedElement: "3Lz+3T", info: "x", baseValue: "11.11", goe: "1.95", judges: ["4", "3", "3", "3", "4", "2", "2", "3", "3"], ref: "", panelScore: "13.06" },
-    { number: "5", executedElement: "StSq4", info: "", baseValue: "3.90", goe: "1.17", judges: ["3", "3", "3", "3", "4", "4", "2", "2", "3"], ref: "", panelScore: "5.07" },
-    { number: "6", executedElement: "FccoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["4", "4", "4", "3", "3", "4", "4", "5", "5"], ref: "", panelScore: "4.90" },
-    { number: "7", executedElement: "CcoSp4", info: "", baseValue: "3.50", goe: "1.05", judges: ["3", "2", "3", "3", "3", "4", "3", "3", "3"], ref: "", panelScore: "4.55" },
+    { number: "1", executedElement: "3F", info: "", baseValue: "5.30", goe: "1.59", judges: ["3", "1", "5", "4", "2", "4", "1", "3", "4"], ref: "", panelScore: "6.89" },
+    { number: "2", executedElement: "2A", info: "", baseValue: "3.30", goe: "1.32", judges: ["5", "5", "4", "5", "2", "5", "4", "2", "3"], ref: "", panelScore: "4.62" },
+    { number: "3", executedElement: "FCSp4", info: "", baseValue: "3.20", goe: "1.28", judges: ["5", "4", "5", "3", "3", "3", "5", "2", "5"], ref: "", panelScore: "4.48" },
+    { number: "4", executedElement: "3Lz+3T", info: "x", baseValue: "11.11", goe: "1.95", judges: ["2", "2", "5", "5", "1", "2", "4", "1", "5"], ref: "", panelScore: "13.06" },
+    { number: "5", executedElement: "StSq4", info: "", baseValue: "3.90", goe: "1.17", judges: ["1", "4", "5", "3", "4", "3", "1", "1", "5"], ref: "", panelScore: "5.07" },
+    { number: "6", executedElement: "FCCoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["4", "2", "4", "5", "4", "4", "4", "4", "4"], ref: "", panelScore: "4.90" },
+    { number: "7", executedElement: "CCoSp4", info: "", baseValue: "3.50", goe: "1.05", judges: ["1", "5", "4", "3", "3", "1", "3", "2", "5"], ref: "", panelScore: "4.55" },
   ],
   technicalTotals: {
     baseValue: "33.81",
-    panelScore: "42.39",
+    panelScore: "43.57",
   },
   programComponents: [
-    { component: "Composition", factor: "1.33", judges: ["8.50", "9.00", "8.75", "8.75", "9.50", "9.00", "9.00", "9.00", "9.50"], score: "9.00" },
-    { component: "Presentation", factor: "1.33", judges: ["9.00", "9.00", "8.75", "8.75", "9.25", "8.75", "9.00", "9.00", "9.25"], score: "8.97" },
-    { component: "Skating Skills", factor: "1.33", judges: ["9.00", "9.25", "9.00", "9.25", "9.75", "9.75", "9.25", "9.50", "9.75"], score: "9.39" },
+    { component: "Composition", factor: "1.33", judges: ["8.25", "8.50", "7.75", "8.00", "8.00", "8.50", "8.00", "8.50", "8.75"], score: "8.25" },
+    { component: "Presentation", factor: "1.33", judges: ["8.50", "8.00", "8.25", "9.00", "9.00", "7.75", "9.00", "8.00", "8.75"], score: "8.50" },
+    { component: "Skating Skills", factor: "1.33", judges: ["9.00", "9.50", "9.75", "8.50", "8.75", "9.25", "9.75", "8.25", "8.25"], score: "9.00" },
   ],
-  componentTotal: "36.40",
+  componentTotal: "34.25",
   deductionItems: [],
 };
