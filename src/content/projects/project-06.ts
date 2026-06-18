@@ -7,7 +7,7 @@ export const project06: PortfolioItem = {
   title: "天外来祸",
   wordCount: "9.6k words",
   description: "是的，我们有一个孩子。",
-  thumbnailImage: "/momoblog/images/project-06/project-06-02.jpg",
+  thumbnailImage: "/momoblog/images/project-06/project-06-01.jpg",
   hasAdultContent: true,
   tags: ["气膜冰场的雨季", "ECHO", "18+"],
   blocks: [
