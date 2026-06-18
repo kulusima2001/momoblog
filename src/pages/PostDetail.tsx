@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { news } from "../content/news";
 import { TagList } from "../components/TagList";
 import { projects } from "../content/projects";
+import type { NewsItem } from "../types/news";
 import type { ProjectContentBlock } from "../types/project";
+
+const posts = [...projects, ...news];
+
+function isNewsPost(post: (typeof posts)[number]): post is NewsItem {
+  return "date" in post;
+}
 
 function renderMarkdown(content: string, blockIndex: number) {
   return content
@@ -79,8 +87,11 @@ export function PostDetail() {
   const location = useLocation();
   const navigate = useNavigate();
   const locationState = location.state as { returnTo?: string } | null;
-  const returnTo = locationState?.returnTo === "/story" ? "/story" : "/";
-  const post = projects.find((item) => item.slug === slug);
+  const returnTo =
+    locationState?.returnTo === "/story" || locationState?.returnTo === "/news"
+      ? locationState.returnTo
+      : "/";
+  const post = posts.find((item) => item.slug === slug);
   const [isAdultContentConfirmed, setIsAdultContentConfirmed] = useState(false);
 
   useEffect(() => {
@@ -128,13 +139,16 @@ export function PostDetail() {
     );
   }
 
+  const isNews = isNewsPost(post);
+
   return (
-    <article className="article-page">
+    <article className={`article-page${isNews ? " news-detail-page" : ""}`}>
       <header className="article-header">
         <p className="eyebrow">Title</p>
         <h1>{post.title}</h1>
+        {isNews ? <time dateTime={post.date}>{post.date}</time> : null}
         <p>{post.description}</p>
-        <TagList tags={post.tags} />
+        {isNews ? null : <TagList tags={post.tags} />}
       </header>
 
       <div className="article-content">

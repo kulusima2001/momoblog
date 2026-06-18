@@ -6,7 +6,7 @@ export const project01: PortfolioItem = {
   slug: "project-01",
   title: "長夏高懸",
   wordCount: "25K words",
-  description: "一個髮生在無儘夏日的故事。",
+  description: "在台北，無盡的夏天。",
   thumbnailImage: "/momoblog/images/project-01/project-01-02.jpg",
   hasAdultContent: true,
   tags: ["金鱼悬浮", "18+"],

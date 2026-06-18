@@ -6,7 +6,7 @@ export const project06: PortfolioItem = {
   slug: "project-06",
   title: "天外来祸",
   wordCount: "9.6k words",
-  description: "一个并不适合有任何雷点的人观看的故事。",
+  description: "是的，我们有一个孩子。",
   thumbnailImage: "/momoblog/images/project-06/project-06-02.jpg",
   hasAdultContent: true,
   tags: ["气膜冰场的雨季", "ECHO", "18+"],

@@ -16,7 +16,7 @@ export function Scores() {
   return (
     <section className="content-page">
       <p className="eyebrow">Scores</p>
-      <h1>Score Sheets</h1>
+      <h1>分数查询</h1>
       <div className="score-link-list">
         {scoreSheetList.map((scoreSheet) => (
           <Link key={scoreSheet.id} to={`/scores/${scoreSheet.id}`} className="score-link-item">

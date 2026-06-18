@@ -14,8 +14,10 @@ type GallerySection = {
   id: string;
   description: string;
   title: string;
-  link?: string;
-  linkText?: string;
+  links?: {
+    href: string;
+    text: string;
+  }[];
   timeline?: typeof timeline01;
   items: PortfolioItem[];
 };
@@ -25,8 +27,16 @@ const gallerySections: GallerySection[] = [
     id: "section-01",
     description: "原作线 | 双花滑选手",
     title: "吹不动那红色的河",
-    link: "/scores",
-    linkText: "记录查询",
+    links: [
+      {
+        href: "/news",
+        text: "新闻"
+      },
+      {
+        href: "/scores",
+        text: "分数查询"
+      },
+    ],
     timeline: timeline01,
     items: [project03]
   },
@@ -79,10 +89,14 @@ export function Gallery() {
               <h2>{section.title}</h2>
               <div className="gallery-section-meta">
                 <p>{section.description}</p>
-                {section.link ? (
-                  <Link className="gallery-section-link" to={section.link}>
-                    {section.linkText ?? section.link}
-                  </Link>
+                {section.links?.length ? (
+                  <div className="gallery-section-links">
+                    {section.links.map((link) => (
+                      <Link key={link.href} className="gallery-section-link" to={link.href}>
+                        {link.text}
+                      </Link>
+                    ))}
+                  </div>
                 ) : null}
               </div>
             </div>
