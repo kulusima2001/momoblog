@@ -203,9 +203,3 @@ public/images/timeline-01/
 ```
 
 移动端尺寸在 `@media (max-width: 720px)` 内另行定义。
-
-## 注意事项
-
-- `dist/` 是构建输出，不建议手动编辑。
-- 当前源码中部分中文文案显示为乱码；README 只记录项目现状，没有修正文案编码。
-- `src/content/news/news-01.ts` 存在但当前没有加入 `news` 数组，因此不会出现在新闻列表中。

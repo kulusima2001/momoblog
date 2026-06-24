@@ -1,0 +1,50 @@
+import type { ScoreSheetData } from "./types";
+
+export const HanLI2018WcShortProgram: ScoreSheetData = {
+  id: "han-li-2018-wc-short-program",
+  title: "2018 World Figure Skating Championships - Han LI Short Program",
+  eventName: "World Figure Skating Championships",
+  eventYear: "2018",
+  programType: "Short Program",
+  skater: {
+    name: "Han LI",
+    country: "CHN",
+    rank: "1",
+    startNumber: "34",
+  },
+  totalScore: "78.45",
+  tes: "42.21",
+  pcs: "36.24",
+  deductions: "0.00",
+  judges: [
+    { label: "J1" },
+    { label: "J2" },
+    { label: "J3" },
+    { label: "J4" },
+    { label: "J5" },
+    { label: "J6" },
+    { label: "J7" },
+    { label: "J8" },
+    { label: "J9" },
+  ],
+  technicalElements: [
+    { number: "1", executedElement: "3F", info: "", baseValue: "5.30", goe: "1.59", judges: ["2", "4", "5", "3", "4", "4", "2", "1", "2"], ref: "", panelScore: "6.89" },
+    { number: "2", executedElement: "2A", info: "", baseValue: "3.30", goe: "1.32", judges: ["5", "3", "2", "5", "4", "3", "5", "3", "5"], ref: "", panelScore: "4.62" },
+    { number: "3", executedElement: "CCoSp4", info: "", baseValue: "3.50", goe: "1.40", judges: ["3", "4", "5", "3", "4", "5", "5", "2", "4"], ref: "", panelScore: "4.90" },
+    { number: "4", executedElement: "3Lz+3Lo", info: "x", baseValue: "11.88", goe: "1.30", judges: ["4", "2", "1", "2", "4", "2", "2", "1", "0"], ref: "", panelScore: "13.18" },
+    { number: "5", executedElement: "StSq4", info: "", baseValue: "3.90", goe: "0.78", judges: ["1", "1", "2", "2", "3", "4", "2", "0", "3"], ref: "", panelScore: "4.68" },
+    { number: "6", executedElement: "FCSp4", info: "", baseValue: "3.20", goe: "0.96", judges: ["3", "5", "3", "1", "2", "1", "5", "2", "5"], ref: "", panelScore: "4.16" },
+    { number: "7", executedElement: "LSp4", info: "", baseValue: "2.70", goe: "1.08", judges: ["5", "4", "4", "3", "5", "4", "2", "3", "5"], ref: "", panelScore: "3.78" },
+  ],
+  technicalTotals: {
+    baseValue: "33.78",
+    panelScore: "42.21",
+  },
+  programComponents: [
+    { component: "Composition", factor: "1.33", judges: ["9.50", "9.75", "9.50", "9.00", "8.75", "9.50", "9.50", "8.75", "9.00"], score: "9.25" },
+    { component: "Presentation", factor: "1.33", judges: ["9.50", "8.50", "8.75", "8.50", "9.25", "9.50", "9.50", "8.50", "9.00"], score: "9.00" },
+    { component: "Skating Skills", factor: "1.33", judges: ["8.75", "9.50", "9.75", "8.75", "8.50", "8.50", "9.50", "9.00", "9.00"], score: "9.00" },
+  ],
+  componentTotal: "36.24",
+  deductionItems: [],
+};
