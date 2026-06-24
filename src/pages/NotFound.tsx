@@ -6,7 +6,7 @@ export function NotFound() {
       <p className="eyebrow">404</p>
       <h1>[Missing page placeholder]</h1>
       <p>[Message placeholder]</p>
-      <Link to="/" className="text-button">
+      <Link to="/" className="text-button return-button">
         [返回首页]
       </Link>
     </section>

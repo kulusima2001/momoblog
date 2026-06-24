@@ -22,7 +22,7 @@ export function ScoreSheetPage() {
         <p className="eyebrow">Score Sheet</p>
         <h1>Score sheet not found</h1>
         <p>No score sheet exists for this id.</p>
-        <Link to="/" className="text-button">
+        <Link to="/" className="text-button return-button">
           Back home
         </Link>
       </section>

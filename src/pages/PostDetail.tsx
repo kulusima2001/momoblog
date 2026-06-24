@@ -104,7 +104,7 @@ export function PostDetail() {
         <p className="eyebrow">404</p>
         <h1>[Missing page placeholder]</h1>
         <p>[Message placeholder]</p>
-        <Link to={returnTo} className="text-button">
+        <Link to={returnTo} className="text-button return-button">
           [返回首页]
         </Link>
       </section>
@@ -156,7 +156,7 @@ export function PostDetail() {
       </div>
 
       <footer className="article-footer">
-        <Link to={returnTo} className="text-button">
+        <Link to={returnTo} className="text-button return-button">
           返回
         </Link>
       </footer>

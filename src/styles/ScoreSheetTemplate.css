@@ -247,14 +247,14 @@
   align-items: center;
   justify-content: center;
   min-height: 32px;
-  padding: 0 14px;
+  padding: 0 10px;
   color: #ffffff;
   background: #000000;
   border: 1px solid #000000;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   font: inherit;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -332,19 +332,12 @@
   }
 
   .score-protocol-table th,
-  .score-protocol-table td,
-  .score-back-button {
+  .score-protocol-table td {
     font-size: var(--score-table-font-size);
   }
 
   .score-page + .score-page-actions {
     margin: 12px auto 52px;
-  }
-
-  .score-page + .score-page-actions .score-back-button {
-    min-height: 32px;
-    padding: 0 10px;
-    border-radius: 5px;
   }
 
   .score-protocol-table strong,
