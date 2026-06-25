@@ -5,6 +5,7 @@ import { TagList } from "../components/TagList";
 import { projects } from "../content/projects";
 import type { NewsItem } from "../types/news";
 import type { ProjectContentBlock } from "../types/project";
+import { createReturnNavigation } from "../utils/navigationState";
 
 const posts = [...projects, ...news];
 
@@ -86,11 +87,8 @@ export function PostDetail() {
   const { slug } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const locationState = location.state as { returnTo?: string } | null;
-  const returnTo =
-    locationState?.returnTo === "/story" || locationState?.returnTo === "/news"
-      ? locationState.returnTo
-      : "/";
+  const fallbackReturnTo = location.pathname.startsWith("/news/") ? "/news" : "/";
+  const returnNavigation = createReturnNavigation(location.state, fallbackReturnTo);
   const post = posts.find((item) => item.slug === slug);
   const [isAdultContentConfirmed, setIsAdultContentConfirmed] = useState(false);
 
@@ -104,12 +102,22 @@ export function PostDetail() {
         <p className="eyebrow">404</p>
         <h1>[Missing page placeholder]</h1>
         <p>[Message placeholder]</p>
-        <Link to={returnTo} className="text-button return-button">
+        <Link
+          to={returnNavigation.path}
+          state={returnNavigation.state}
+          className="text-button return-button"
+        >
           [返回首页]
         </Link>
       </section>
     );
   }
+
+  const isNews = isNewsPost(post);
+  const detailReturn = createReturnNavigation(location.state, isNews ? "/news" : "/");
+  const goToDetailReturn = () => {
+    navigate(detailReturn.path, { replace: true, state: detailReturn.state });
+  };
 
   if (post.hasAdultContent && !isAdultContentConfirmed) {
     return (
@@ -129,7 +137,7 @@ export function PostDetail() {
             <button
               type="button"
               className="secondary-button"
-              onClick={() => navigate(returnTo, { replace: true })}
+              onClick={goToDetailReturn}
             >
               取消
             </button>
@@ -138,8 +146,6 @@ export function PostDetail() {
       </div>
     );
   }
-
-  const isNews = isNewsPost(post);
 
   return (
     <article className={`article-page${isNews ? " news-detail-page" : ""}`}>
@@ -156,7 +162,7 @@ export function PostDetail() {
       </div>
 
       <footer className="article-footer">
-        <Link to={returnTo} className="text-button return-button">
+        <Link to={detailReturn.path} state={detailReturn.state} className="text-button return-button">
           返回
         </Link>
       </footer>

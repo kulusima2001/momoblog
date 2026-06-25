@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PostCard } from "../components/PostCard";
 import { projects } from "../content/projects";
 import {project01} from "../content/projects/project-01";
@@ -7,6 +7,7 @@ import {project03} from "../content/projects/project-03";
 import {project04} from "../content/projects/project-04";
 import {project05} from "../content/projects/project-05";
 import {project06} from "../content/projects/project-06";
+import "../styles/home-character-dialogue.css";
 import "../styles/home-collage.css";
 
 const characterProfiles = [
@@ -106,6 +107,7 @@ const dialogueStatuses = [
 ] as const;
 const featuredProjects = [project03, project01];
 const heroVisualImage = "/momoblog/images/visualimage1.jpg";
+const typewriterDelayMs = 62;
 const homeCollageItems = [
   {
     id: "collage-01",
@@ -156,6 +158,43 @@ const homeCollageItems = [
     size: "small"
   }
 ] as const;
+
+function TypewriterText({ text }: { text: string }) {
+  const [visibleText, setVisibleText] = useState("");
+
+  useEffect(() => {
+    const characters = Array.from(text);
+    setVisibleText("");
+
+    if (characters.length === 0) {
+      return;
+    }
+
+    let characterIndex = 0;
+    const typewriterTimer = window.setInterval(() => {
+      characterIndex += 1;
+      setVisibleText(characters.slice(0, characterIndex).join(""));
+
+      if (characterIndex >= characters.length) {
+        window.clearInterval(typewriterTimer);
+      }
+    }, typewriterDelayMs);
+
+    return () => window.clearInterval(typewriterTimer);
+  }, [text]);
+
+  return (
+    <p className="dialogue-typewriter" aria-label={text}>
+      <span aria-hidden="true">{visibleText}</span>
+      <span
+        className={`dialogue-typewriter-cursor${
+          visibleText === text ? " dialogue-typewriter-cursor-complete" : ""
+        }`}
+        aria-hidden="true"
+      />
+    </p>
+  );
+}
 
 export function Home() {
   const [dialogueIndexes, setDialogueIndexes] = useState([0, 0]);
@@ -208,7 +247,7 @@ export function Home() {
                     {dialogueStatuses[dialogueIndexes[lineIndex]][lineIndex]}
                   </span>
                 </div>
-                <p>{dialogueLine.line}</p>
+                <TypewriterText text={dialogueLine.line} />
               </div>
             </article>
           ))}
@@ -248,7 +287,7 @@ export function Home() {
 
       <section className="home-collage" aria-labelledby="home-collage-title">
         <div className="section-heading home-collage-heading">
-          <h2 id="home-collage-title">Photo book</h2>
+          <h2 id="home-collage-title">Photo Book</h2>
           <span>{homeCollageItems.length} 张</span>
         </div>
 

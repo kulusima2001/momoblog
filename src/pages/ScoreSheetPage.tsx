@@ -1,19 +1,17 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { ScoreSheet } from "../components/ScoreSheet";
 import { scoreSheets } from "../content/scores";
+import { createReturnNavigation } from "../utils/navigationState";
 
 export function ScoreSheetPage() {
   const { id } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
   const scoreSheet = id ? scoreSheets[id] : undefined;
 
   const goBack = () => {
-    if (window.history.length > 1) {
-      navigate(-1);
-      return;
-    }
-
-    navigate("/scores");
+    const returnNavigation = createReturnNavigation(location.state, "/scores");
+    navigate(returnNavigation.path, { state: returnNavigation.state });
   };
 
   if (!scoreSheet) {

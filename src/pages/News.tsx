@@ -1,11 +1,26 @@
-import { Link, useNavigate } from "react-router-dom";
+import type { MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { news } from "../content/news";
+import { createForwardState, createReturnNavigation } from "../utils/navigationState";
 
 export function News() {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate("/story");
+    const returnNavigation = createReturnNavigation(location.state, "/story");
+    navigate(returnNavigation.path, { state: returnNavigation.state });
+  };
+
+  const openNews = (event: MouseEvent<HTMLAnchorElement>, slug: string) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) {
+      return;
+    }
+
+    event.preventDefault();
+    navigate(`/news/${slug}`, {
+      state: createForwardState(location.state, location.pathname)
+    });
   };
 
   return (
@@ -16,7 +31,11 @@ export function News() {
       <div className="news-list">
         {news.map((item) => (
           <article key={item.id} className="news-list-item">
-            <Link to={`/news/${item.slug}`} state={{ returnTo: "/news" }}>
+            <Link
+              to={`/news/${item.slug}`}
+              state={createForwardState(location.state, location.pathname)}
+              onClick={(event) => openNews(event, item.slug)}
+            >
               <time dateTime={item.date}>{item.date}</time>
               <h2>{item.title}</h2>
               <p>{item.description}</p>

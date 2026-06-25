@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import type { MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { PostCard } from "../components/PostCard";
 import { TimeLine } from "../components/TimeLine";
 import type { PortfolioItem } from "../types/project";
@@ -9,6 +10,7 @@ import { project04 } from "../content/projects/project-04";
 import { project05 } from "../content/projects/project-05";
 import { project06 } from "../content/projects/project-06";
 import { timeline01 } from "../content/timelines";
+import { createForwardState } from "../utils/navigationState";
 
 type GallerySection = {
   id: string;
@@ -30,11 +32,11 @@ const gallerySections: GallerySection[] = [
     links: [
       {
         href: "/news",
-        text: "新闻"
+        text: "小道消息"
       },
       {
         href: "/scores",
-        text: "分数查询"
+        text: "看看成绩"
       },
     ],
     timeline: timeline01,
@@ -44,6 +46,12 @@ const gallerySections: GallerySection[] = [
     id: "section-02",
     description: "师生if线 | 年差12岁 | 花滑选手 x 花滑教练",
     title: "气膜冰场的雨季",
+    links: [
+      {
+        href: "/diary/camellia",
+        text: "小黎的日记本"
+      },
+    ],
     items: [project02, project06]
   },
   {
@@ -69,6 +77,20 @@ const gallerySections: GallerySection[] = [
 const galleryHeaderVisualImage = "/momoblog/images/visualimage1.jpg";
 
 export function Gallery() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const openSectionLink = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) {
+      return;
+    }
+
+    event.preventDefault();
+    navigate(href, {
+      state: createForwardState(location.state, location.pathname)
+    });
+  };
+
   return (
     <section className="gallery-page">
       <div className="gallery-header">
@@ -92,7 +114,13 @@ export function Gallery() {
                 {section.links?.length ? (
                   <div className="gallery-section-links">
                     {section.links.map((link) => (
-                      <Link key={link.href} className="gallery-section-link" to={link.href}>
+                      <Link
+                        key={link.href}
+                        className="gallery-section-link"
+                        to={link.href}
+                        state={createForwardState(location.state, location.pathname)}
+                        onClick={(event) => openSectionLink(event, link.href)}
+                      >
                         {link.text}
                       </Link>
                     ))}

@@ -1,6 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import type { MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { PortfolioItem } from "../types/project";
 import { TagList } from "./TagList";
+import { createForwardState } from "../utils/navigationState";
 
 type PostCardProps = {
   post: PortfolioItem;
@@ -17,13 +19,27 @@ export function PostCard({
 }: PostCardProps) {
   const TitleTag = `h${titleLevel}` as const;
   const location = useLocation();
+  const navigate = useNavigate();
+  const href = `/projects/${post.slug}`;
+
+  const openPost = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) {
+      return;
+    }
+
+    event.preventDefault();
+    navigate(href, {
+      state: createForwardState(location.state, location.pathname)
+    });
+  };
 
   return (
     <article className="post-card">
       <Link
-        to={`/projects/${post.slug}`}
+        to={href}
         className={linkClassName}
-        state={{ returnTo: location.pathname }}
+        state={createForwardState(location.state, location.pathname)}
+        onClick={openPost}
       >
         <div className={imageClassName}>
           {post.thumbnailImage ? (
