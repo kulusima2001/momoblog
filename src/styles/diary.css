@@ -108,8 +108,8 @@
 
 .diary-page-number {
   position: absolute;
-  right: 34px;
-  bottom: 24px;
+  right: 24px;
+  bottom: 14px;
   z-index: 1;
   color: rgb(0 0 0 / 32%);
   font-family: inherit;
@@ -121,7 +121,7 @@
 
 .diary-paper-left .diary-page-number {
   right: auto;
-  left: 34px;
+  left: 24px;
 }
 
 .diary-entry-header,
@@ -167,7 +167,7 @@
 
 .diary-photo {
   width: min(240px, 70%);
-  margin: 14px 0 22px;
+  margin: 8px 0 12px;
   padding: 0;
   overflow: hidden;
   transform: rotate(0.8deg);
@@ -187,14 +187,45 @@
   margin-right: auto;
 }
 
+.diary-image-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin: 2px 0 10px;
+}
+
+.diary-image-note-right {
+  flex-direction: row-reverse;
+}
+
+.diary-image-note .diary-photo {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.diary-image-note .diary-photo-standard {
+  width: min(42%, 200px);
+}
+
+.diary-image-note .diary-photo-portrait {
+  width: min(36%, 160px);
+}
+
+.diary-image-note p {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  text-indent: 2em;
+}
+
 .diary-photo-wrap.diary-photo-left {
   float: left;
-  margin: 4px 22px 16px 0;
+  margin: 2px 22px 10px 0;
 }
 
 .diary-photo-wrap.diary-photo-right {
   float: right;
-  margin: 4px 0 16px 22px;
+  margin: 2px 0 10px 22px;
 }
 
 .diary-photo-center,
@@ -225,16 +256,16 @@
 }
 
 .diary-photo img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  /* Keep each uploaded image's own proportions instead of reserving a cropped box. */
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
-.diary-photo-wide img,
 .diary-photo-wide .diary-photo-placeholder {
   aspect-ratio: 16 / 9;
 }
 
-.diary-photo-portrait img,
 .diary-photo-portrait .diary-photo-placeholder {
   aspect-ratio: 3 / 4;
 }
@@ -252,15 +283,15 @@
 }
 
 .diary-photo figcaption {
-  min-height: 44px;
+  min-height: 20px;
   margin: 0;
-  padding: 8px 10px 10px;
+  padding: 5px 5px 5px;
   color: var(--muted);
   background: #ffffff;
   border-top: 1px solid var(--line-soft);
   font-family: inherit;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 10px;
+  line-height: 1;
   text-align: center;
 }
 
@@ -282,7 +313,7 @@
 }
 
 .diary-entry-content p {
-  margin: 0 0 18px;
+  margin: 0 0 10px;
   text-indent: 2em;
 }
 
@@ -373,7 +404,7 @@
 
   .diary-page-number {
     right: 22px;
-    bottom: 20px;
+    bottom: 1px;
     font-size: 12px;
   }
 
@@ -398,30 +429,54 @@
   .diary-photo,
   .diary-paper-right .diary-photo {
     float: none;
-    margin: 14px auto 20px;
+    margin: 8px auto 12px;
     transform: rotate(0.5deg);
   }
 
   .diary-photo-standard {
-    width: min(100%, 270px);
+    width: min(100%, 290px);
   }
 
   .diary-photo-wide,
   .diary-photo-center,
   .diary-paper-right .diary-photo-center {
-    width: min(100%, 320px);
+    width: min(100%, 340px);
   }
 
   .diary-photo-portrait {
-    width: min(72%, 190px);
+    width: min(76%, 205px);
   }
 
   .diary-photo-wrap.diary-photo-standard {
-    width: min(100%, 270px);
+    width: min(100%, 290px);
   }
 
   .diary-photo-wrap.diary-photo-portrait {
-    width: min(72%, 190px);
+    width: min(76%, 205px);
+  }
+
+  .diary-image-note {
+    gap: 12px;
+    margin: 2px 0 10px;
+  }
+
+  .diary-image-note .diary-photo,
+  .diary-image-note .diary-photo-wrap.diary-photo-right,
+  .diary-image-note .diary-photo-wrap.diary-photo-left {
+    float: none;
+    margin: 0;
+  }
+
+  .diary-image-note .diary-photo-standard {
+    width: min(46%, 170px);
+  }
+
+  .diary-image-note .diary-photo-portrait {
+    width: min(44%, 150px);
+  }
+
+  .diary-image-note p {
+    margin: 0;
   }
 
   .diary-photo-right,
@@ -434,7 +489,7 @@
   .diary-photo-wrap.diary-photo-right,
   .diary-paper-right .diary-photo-wrap.diary-photo-right {
     float: none;
-    margin: 14px auto 20px;
+    margin: 8px auto 12px;
   }
 
   .diary-photo-left {
@@ -444,7 +499,7 @@
 
   .diary-photo-wrap.diary-photo-left {
     float: none;
-    margin: 14px auto 20px;
+    margin: 8px auto 12px;
   }
 
   .diary-photo-center,
@@ -460,19 +515,19 @@
   }
 
   .diary-photo figcaption {
-    min-height: 42px;
-    padding: 8px 10px 10px;
-    font-size: 12px;
-    line-height: 1.5;
+    min-height: 20px;
+    padding: 5px 5px 5px;
+    font-size: 10px;
+    line-height: 1;
   }
 
   .diary-entry-content {
-    font-size: 16px;
-    line-height: 1.95;
+    font-size: 14px;
+    line-height: 2;
   }
 
   .diary-entry-content p {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     text-indent: 2em;
   }
 

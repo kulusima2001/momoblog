@@ -22,6 +22,8 @@ export type DiaryContentBlock =
       variant?: "standard" | "wide" | "portrait";
       align?: "left" | "right";
       wrap?: boolean;
+      /** Text displayed beside standard and portrait images. */
+      sideText?: string;
     };
 
 export const diaryTemplate: DiaryEntry = {
@@ -42,7 +44,7 @@ export const diaryTemplate: DiaryEntry = {
       caption: "标准图片说明占位",
       variant: "standard",
       align: "left",
-      wrap: true
+      sideText: "图片旁文字占位。"
     },
     {
       type: "image",
@@ -58,7 +60,7 @@ export const diaryTemplate: DiaryEntry = {
       caption: "竖向图片说明占位",
       variant: "portrait",
       align: "right",
-      wrap: true
+      sideText: "图片旁文字占位。"
     },
     {
       type: "paragraph",

@@ -14,7 +14,7 @@ type DiaryPageModel = {
 };
 
 const DESKTOP_PAGE_CAPACITY = 520;
-const MOBILE_PAGE_CAPACITY = 480;
+const MOBILE_PAGE_CAPACITY = 520;
 const FIRST_PAGE_HEADER_WEIGHT = 132;
 const CONTINUED_HEADER_WEIGHT = 0;
 const IMAGE_CAPTION_WEIGHT = 28;
@@ -140,7 +140,7 @@ function DiaryBlock({ block }: { block: DiaryContentBlock }) {
     const align = variant === "wide" ? "center" : block.align ?? "left";
     const wrap = block.wrap ?? variant !== "wide";
 
-    return (
+    const photo = (
       <figure className={`diary-photo diary-photo-${variant} diary-photo-${align}${wrap ? " diary-photo-wrap" : ""}`}>
         {block.src ? (
           <img src={block.src} alt={block.alt ?? ""} />
@@ -152,6 +152,17 @@ function DiaryBlock({ block }: { block: DiaryContentBlock }) {
         {block.caption ? <figcaption>{block.caption}</figcaption> : null}
       </figure>
     );
+
+    if (variant !== "wide" && block.sideText) {
+      return (
+        <section className={`diary-image-note diary-image-note-${align}`}>
+          {photo}
+          <p>{block.sideText}</p>
+        </section>
+      );
+    }
+
+    return photo;
   }
 
   return <p>{block.text}</p>;
@@ -281,9 +292,26 @@ function splitParagraphBlock(block: Extract<DiaryContentBlock, { type: "paragrap
 function getBlockWeight(block: DiaryContentBlock, isMobile: boolean) {
   if (block.type === "image") {
     const variant = block.variant ?? "standard";
+
+    if (block.sideText && variant !== "wide") {
+      // Side-text photos are deliberately narrower than standalone photos. Their
+      // height is the larger of the photo column and text column, not their sum.
+      const pairedPhotoWeight = {
+        standard: isMobile ? 180 : 185,
+        portrait: isMobile ? 212 : 220
+      }[variant];
+      const charactersPerLine = isMobile ? 12 : 14;
+      const sideTextLines = Math.max(1, Math.ceil(block.sideText.length / charactersPerLine));
+      const sideTextWeight = 10 + sideTextLines * (isMobile ? 26 : 32);
+
+      return Math.max(pairedPhotoWeight, sideTextWeight);
+    }
+
     const imageWeight = {
-      standard: isMobile ? 224 : 210,
-      wide: isMobile ? 190 : 182,
+      // Includes the rendered image height and its vertical margins. Captions are
+      // added below, so a photo that cannot fit is moved to the next paper.
+      standard: isMobile ? 240 : 220,
+      wide: isMobile ? 220 : 240,
       portrait: isMobile ? 292 : 270
     }[variant];
 
@@ -293,5 +321,5 @@ function getBlockWeight(block: DiaryContentBlock, isMobile: boolean) {
   const charactersPerLine = isMobile ? 20 : 26;
   const lineCount = Math.max(1, Math.ceil(block.text.length / charactersPerLine));
 
-  return 14 + lineCount * 30;
+  return 10 + lineCount * (isMobile ? 26 : 32);
 }

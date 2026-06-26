@@ -1,46 +1,23 @@
-export type DiaryEntry = {
-  id: string;
-  date: string;
-  title: string;
-  weather?: string;
-  location?: string;
-  content?: string[];
-  blocks?: DiaryContentBlock[];
-  image?: string;
-};
-
-export type DiaryContentBlock =
-  | {
-      type: "paragraph";
-      text: string;
-    }
-  | {
-      type: "image";
-      src: string;
-      alt?: string;
-      caption?: string;
-    };
+import type { DiaryEntry } from "./template";
 
 export const diary02: DiaryEntry = {
   id: "diary-02",
-  date: "日期占位",
-  title: "标题占位",
-  weather: "天气占位",
-  location: "地点占位",
+  date: "2013年5月7日 星期二",
+  title: "sad...sad...",
+  weather: "阴天",
+  location: "北京",
   blocks: [
     {
       type: "paragraph",
-      text: "正文占位文字第一段。"
-    },
-    {
-      type: "image",
-      src: "",
-      alt: "图片占位",
-      caption: "图片说明占位"
+      text: "早上坐飞机回北京，中午到机场，李理把我送回家.开门一看，家里果然没人。"
     },
     {
       type: "paragraph",
-      text: "正文占位文字第二段。"
-    }
+      text: "我问李理能不能带我回家，李理很为难，告诉我她妈妈生病了，她得去医院。"
+    },
+    {
+      type: "paragraph",
+      text: "我说我可以和她一起去，但她说最近有流感，拒绝了我。我没好意思再求她了，毕竟，李理也很忙呢。"
+    },
   ]
 };
