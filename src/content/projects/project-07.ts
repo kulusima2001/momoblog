@@ -1,13 +1,13 @@
 import type { PortfolioItem } from "../../types/project";
-import project06Content_01 from "./project-06.md?raw";
+import project07Content_01 from "./project-07.md?raw";
 
-export const project06: PortfolioItem = {
-  id: "project-06",
-  slug: "project-06",
-  title: "天外来祸",
-  wordCount: "9.6k words",
-  description: "是的，我们有一个孩子。",
-  thumbnailImage: "/momoblog/images/project-06/project-06-01.jpg",
+export const project07: PortfolioItem = {
+  id: "project-07",
+  slug: "project-07",
+  title: "天才主义",
+  wordCount: "未完待续中",
+  description: "她似乎没那么在意成绩了。",
+  thumbnailImage: "/momoblog/images/project-07/project-07-01.jpg",
   hasAdultContent: true,
   adultContentNotice: {
     eyebrow: "Content notice",
@@ -16,17 +16,17 @@ export const project06: PortfolioItem = {
     confirmText: "确认进入",
     cancelText: "取消"
   },
-  tags: ["天外来祸", "ECHO.1", ],
+  tags: ["天才主义", "ECHO.2", ],
   blocks: [
     {
       type: "image",
-      src: "/momoblog/images/project-06/project-06-01.jpg",
+      src: "/momoblog/images/project-07/project-07-01.jpg",
       label: "[Image placeholder]",
-      aspectRatio: "standard"
+      aspectRatio: "wide"
     },
     {
       type: "markdown",
-      content: project06Content_01
+      content: project07Content_01
     },
   ]
 };

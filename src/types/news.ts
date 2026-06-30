@@ -8,4 +8,11 @@ export type NewsItem = {
   description: string;
   hasAdultContent: boolean;
   blocks: ProjectContentBlock[];
+  adultContentNotice?: {
+    eyebrow?: string;
+    title?: string;
+    message?: string;
+    confirmText?: string;
+    cancelText?: string;
+  };
 };

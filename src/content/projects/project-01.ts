@@ -9,7 +9,7 @@ export const project01: PortfolioItem = {
   description: "在台北，無盡的夏天。",
   thumbnailImage: "/momoblog/images/project-01/project-01-02.jpg",
   hasAdultContent: true,
-  tags: ["金鱼悬浮", "18+"],
+  tags: ["长夏高悬", ],
   blocks: [
     {
       type: "image",

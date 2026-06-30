@@ -119,33 +119,39 @@ export function PostDetail() {
     navigate(detailReturn.path, { replace: true, state: detailReturn.state });
   };
 
+  const adultContentNotice = post.adultContentNotice ?? {};
   if (post.hasAdultContent && !isAdultContentConfirmed) {
-    return (
-      <div className="adult-content-gate" role="dialog" aria-modal="true" aria-labelledby="adult-content-title">
-        <div className="adult-content-dialog">
-          <p className="eyebrow">Content notice</p>
-          <h1 id="adult-content-title">成人内容提示</h1>
-          <p>这篇文章包含成人内容且不适合任何需要预警的人观看。请确认您已满 18 岁，并愿意继续阅读。</p>
-          <div className="adult-content-actions">
-            <button
-              type="button"
-              className="text-button"
-              onClick={() => setIsAdultContentConfirmed(true)}
-            >
-              确认进入
-            </button>
-            <button
-              type="button"
-              className="secondary-button"
-              onClick={goToDetailReturn}
-            >
-              取消
-            </button>
-          </div>
+  const adultContentNotice = post.adultContentNotice ?? {};
+
+  return (
+    <div className="adult-content-gate" role="dialog" aria-modal="true" aria-labelledby="adult-content-title">
+      <div className="adult-content-dialog">
+        <p className="eyebrow">{adultContentNotice.eyebrow ?? "Content notice"}</p>
+        <h1 id="adult-content-title">{adultContentNotice.title ?? "成人内容提示"}</h1>
+        <p>
+          {adultContentNotice.message ??
+            "这篇文章包含成人内容、亲密关系描写与可能令人不适的情节。请确认您已满 18 岁，并愿意继续阅读。"}
+        </p>
+        <div className="adult-content-actions">
+          <button
+            type="button"
+            className="text-button"
+            onClick={() => setIsAdultContentConfirmed(true)}
+          >
+            {adultContentNotice.confirmText ?? "确认进入"}
+          </button>
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={goToDetailReturn}
+          >
+            {adultContentNotice.cancelText ?? "取消"}
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   return (
     <article className={`article-page${isNews ? " news-detail-page" : ""}`}>

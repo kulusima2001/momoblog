@@ -36,4 +36,11 @@ export type PortfolioItem = {
   hasAdultContent: boolean;
   tags: string[];
   blocks: ProjectContentBlock[];
+  adultContentNotice?: {
+    eyebrow?: string;
+    title?: string;
+    message?: string;
+    confirmText?: string;
+    cancelText?: string;
+  };
 };

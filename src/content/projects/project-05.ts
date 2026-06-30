@@ -8,7 +8,7 @@ export const project05: PortfolioItem = {
   description: "在核爆50年后的废土世界冒险吧！",
   thumbnailImage: "/momoblog/images/project-05/project-05-01.jpg",
   hasAdultContent: false,
-  tags: ["来自新世界",],
+  tags: ["废墟之上",],
   blocks: [
     {
       type: "image",

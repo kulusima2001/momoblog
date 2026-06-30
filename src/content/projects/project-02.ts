@@ -8,7 +8,7 @@ export const project02: PortfolioItem = {
   description: "未说出口的心意。",
   thumbnailImage: "/momoblog/images/project-02/project-02-01.jpg",
   hasAdultContent: false,
-  tags: ["气膜冰场的雨季", ],
+  tags: ["罗森所见证的", ],
   blocks: [
     {
       type: "imageGroup",

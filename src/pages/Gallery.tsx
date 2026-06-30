@@ -9,6 +9,8 @@ import { project03 } from "../content/projects/project-03";
 import { project04 } from "../content/projects/project-04";
 import { project05 } from "../content/projects/project-05";
 import { project06 } from "../content/projects/project-06";
+import { project07 } from "../content/projects/project-07";
+import { project08 } from "../content/projects/project-08";
 import { timeline01 } from "../content/timelines";
 import { createForwardState } from "../utils/navigationState";
 
@@ -52,7 +54,7 @@ const gallerySections: GallerySection[] = [
         text: "小黎的日记本"
       },
     ],
-    items: [project02, project06]
+    items: [project02, project06, project07]
   },
   {
     id: "section-03",
@@ -70,7 +72,7 @@ const gallerySections: GallerySection[] = [
     id: "section-05",
     description: "向哨pa",
     title: "来自新世界",
-    items: [project05]
+    items: [project05, project08]
   },
 ];
 

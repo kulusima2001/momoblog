@@ -8,7 +8,7 @@ export const project03: PortfolioItem = {
   description: "有关于约定的小漫画。",
   thumbnailImage: "/momoblog/images/project-03/project-03-02.jpg",
   hasAdultContent: false,
-  tags: ["吹不动那红色的河", "青年组",],
+  tags: ["一起滑冰的约定", "青年组",],
   blocks: [
     {
       type: "imageGroup",
