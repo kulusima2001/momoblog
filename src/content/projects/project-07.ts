@@ -11,8 +11,8 @@ export const project07: PortfolioItem = {
   hasAdultContent: true,
   adultContentNotice: {
     eyebrow: "Content notice",
-    title: "阅读前提示",
-    message: "这篇文章包含ABO、产子与可能令人不适的情节。请确认您已满 18 岁，并愿意继续阅读。",
+    title: "阅读预警",
+    message: "这篇文章包含成人内容和产子等可能令人不适的情节，请确认您已满 18 岁，并愿意继续阅读。",
     confirmText: "确认进入",
     cancelText: "取消"
   },

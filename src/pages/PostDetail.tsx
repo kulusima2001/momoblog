@@ -127,10 +127,10 @@ export function PostDetail() {
     <div className="adult-content-gate" role="dialog" aria-modal="true" aria-labelledby="adult-content-title">
       <div className="adult-content-dialog">
         <p className="eyebrow">{adultContentNotice.eyebrow ?? "Content notice"}</p>
-        <h1 id="adult-content-title">{adultContentNotice.title ?? "成人内容提示"}</h1>
+        <h1 id="adult-content-title">{adultContentNotice.title ?? "阅读预警"}</h1>
         <p>
           {adultContentNotice.message ??
-            "这篇文章包含成人内容、亲密关系描写与可能令人不适的情节。请确认您已满 18 岁，并愿意继续阅读。"}
+            "这篇文章包含成人内容，请确认您已满 18 岁，并愿意继续阅读。"}
         </p>
         <div className="adult-content-actions">
           <button
