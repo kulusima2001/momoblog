@@ -1082,8 +1082,24 @@ p {
   }
 
   .story-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 12px) / 2);
     gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .story-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-grid > * {
+    min-width: 0;
+    scroll-snap-align: start;
   }
 
   .story-grid .post-card-link {
