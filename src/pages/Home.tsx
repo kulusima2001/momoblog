@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { PostCard } from "../components/PostCard";
 import { projects } from "../content/projects";
 import {project01} from "../content/projects/project-01";
-import {project02} from "../content/projects/project-02";
 import {project03} from "../content/projects/project-03";
-import {project04} from "../content/projects/project-04";
-import {project05} from "../content/projects/project-05";
 import {project06} from "../content/projects/project-06";
+import {project07} from "../content/projects/project-07";
 import "../styles/home-character-dialogue.css";
 import "../styles/home-collage.css";
 
@@ -100,12 +98,12 @@ const dialogueQuotes = [
   }
 ] as const;
 const dialogueStatuses = [
-  ["热心导游", "认真营业"],
-  ["首页播报", "贴心提示"],
+  ["热心导览", "认真营业"],
+  ["首页播报", "温馨提示"],
   ["故事解锁", "按钮侦察"],
   ["自由探索", "安静守候"]
 ] as const;
-const featuredProjects = [project03, project01];
+const featuredProjects = [project03, project01,];
 const heroVisualImage = "/momoblog/images/visualimage1.jpg";
 const typewriterDelayMs = 62;
 const homeCollageItems = [
